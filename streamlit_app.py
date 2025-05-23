@@ -145,7 +145,7 @@ def login():
     st.header("Log in")
 
     with st.form("login_form"):
-        email = st.text_input("Email", value="sshax1015@gmail.com")
+        email = st.text_input("Email.", value="sshax1015@gmail.com")
         password = st.text_input("Password", type="password", value="123456789")
         role = st.selectbox("Choose your role", [r for r in ROLES if r])
 
