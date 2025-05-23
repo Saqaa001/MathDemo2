@@ -8,7 +8,7 @@ from streamlit import navigation, Page
 
 
 # === Firebase Configuration ===
-SERVICE_ACCOUNT_FILE = ".streamlit/firebase.json"
+SERVICE_ACCOUNT_FILE = "f.json"
 FIREBASE_WEB_API_KEY = "AIzaSyCj0UPv444P-C6ggFZ8Q_NXvSSBraHeDG4"
 FIREBASE_AUTH_URL = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={FIREBASE_WEB_API_KEY}"
 ROLES = ["Registration", "Student", "Teacher", "Admin", None]
