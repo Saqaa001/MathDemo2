@@ -6,9 +6,22 @@ import firebase_admin
 from firebase_admin import credentials, firestore, auth
 from streamlit import navigation, Page
 
+jso = {
+  "type": "service_account",
+  "project_id": "login1-e7ab2",
+  "private_key_id": "ef0e00e14a4ebf859f7298cb127019b6c1620004",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCg5KUEsAGtKfb/\n7s8dHB5fyKiKAr0giY2g9NKACbGTHVtDV77VQijBL8cCYEcbGCnRZJiAWyQZQXq+\n1BKbVyOg5lHras5NFCTWFZ9y9aNKbijuN93vHMdCquiENyA23gRwFFaIeN1Dl2gt\n8qGY9V5ZS3O5LyaC2dE5BvCLHfyBGYysGfuuoiVJb7k6nSQsJm07uz6Cw3WVOCO6\naR6kZflpujaSOiJ5oX+TFIrd31lGzNpsLEYj2dQzvwaJY8sY6Bbj3gHPYZIxoGBK\nAqG8apwSe61RDoglhooK8kF+OJer0onSgw8K5dFnI4Mb7pj5tr/H6FoLHtq1TRHG\nheIX9TmDAgMBAAECggEATNRCFJXzhvwWDaq8zhrCSlzoVlbudx4YOncOGcQHPsfy\n75pz7yQTkAS/lFvjOIX2Wh4eUJS1DTZeZcehRvp6cffpwHAVKWtoF67loCC6I+2s\nr+yPlwH4CNbSB2jHgkvMdLTRiYOlrQQc5GwLTJ5Gun80OIbSbgOTTBcLQHNGQ2Ls\nySed7TwCXuCjYKwSRzStoOD5gh5gpOhY/OnMwG9i2OfBqLLfJZfs7EQVr4DhZHzo\ng1Q6lAzePPPelRk73pTOoJjfcq2rk54lPKyo/qQLy5QZq6O8orzW0xxMgHXRWk1D\nUUx2SL4x+EhoKeDOuO213Rmo/Xt+i8H23rhOPK4QgQKBgQDXGaTZMLmWtAUsSDtK\n8WxeRh+UddwgJkzFyrDTPkITw6BE63eu2Yj5ymgwCvSirK3X4ypsuqEqNLz9rEXj\nWV1UlKGTry85oILA9zJfHYEOPlqxO0DkkUEcDwf2atoxi1xREDQ5+I1HrFBU6ReX\nVXTkfwo99zHsEse14/SHdYg6QwKBgQC/fGJPtpsmmP2rdNx6iGxB+ZIOuT7W6FBe\ndTLDatF0WbOKEdnGVO9yCx8CV4FiuBMbkJFfOp1vDyFaMRaZwFaRSDrNTFHe1asR\nV0OvlC32LbgvlO/axoKfCo6J9YAJm4c3E9V1JhKXXtfr3OP5rzcX1g/m5aVjQhi0\nQBc/jMUvwQKBgQDEYdtJl9y5JJ5ccY4AvC5OXANVDc3tZEpPguCx3HODi+V1Ru28\nK0uNkyhQRJBZPQJyyinfnvyphgDOMUyVZu9420IxjY22NT9rYcURZeR/1poCmbCD\nfcJOFcMVTTTsaunb8Mld6/lA6Kdm/nDVb+YK/5mgPWHMwNCo1fhY/Atl9QKBgCA3\nOwsSO9QolTUNejKbVStcY7habjoV57+clCfQhuC+Xrhx/GOj0o0rVdI9CqWjNoPC\ntNKCuA4BS6ky7Qx9EZNrxYjYuEV3SUqnldmqYnkyg/RtaFU0ZLGBQy3uwdXb9snL\nanRFLYeOC2HBThGp6uj1uMMuC79BVYqt5btpYZuBAoGAHyfGZH32fjlibZTBO2qT\nfwYT+KpSAPv5XFwDEp/bNYiRERu3+MtrN9rFN1T4D3tguHzS8fDhp/NI0xDBQOCn\n9DBDs9K9tq5HoH918UZouovKhAuTbPITu8iCBcf6bPMmKTSUW8RBSl5aHoy5+e3K\nsJDuwpGmZ69lSaB3NDS5b8s=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@login1-e7ab2.iam.gserviceaccount.com",
+  "client_id": "109536071117363121755",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40login1-e7ab2.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
 
 # === Firebase Configuration ===
-SERVICE_ACCOUNT_FILE = "f.json"
+SERVICE_ACCOUNT_FILE = jso
 FIREBASE_WEB_API_KEY = "AIzaSyCj0UPv444P-C6ggFZ8Q_NXvSSBraHeDG4"
 FIREBASE_AUTH_URL = f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key={FIREBASE_WEB_API_KEY}"
 ROLES = ["Registration", "Student", "Teacher", "Admin", None]
